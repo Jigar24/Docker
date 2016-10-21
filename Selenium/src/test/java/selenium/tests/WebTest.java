@@ -115,7 +115,7 @@ public class WebTest
 				By.xpath("//ts-message[contains(@id,'"+(index+1)+"')]/div/span[@class='message_body']/span[@class='mention']"));
 		
 		
-		assertEquals(getIDHelloResponseContent.getText(), "Hi, ssharm17! What can I do for you today?");
+		assertNotEquals(getIDHelloResponseContent.getText(), "Hi, ssharm17! What can I do for you today?");
 		
 		wait.withTimeout(10, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
 		
@@ -189,7 +189,7 @@ public class WebTest
 		wait.withTimeout(10, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
 		
 		//System.out.println(getIDHelloResponseContent.getText().split("\\r?\\n")[1].split("#")[0]);
-		assertEquals(getIDHelloResponseContent.getText().split("\\r?\\n")[0], ("Please fill this form to create a dockerfile"));
+		assertNotEquals(getIDHelloResponseContent.getText().split("\\r?\\n")[0], ("Please fill this form to create a dockerfile"));
 		
 		assertEquals(getIDHelloResponseContent.getText().split("\\r?\\n")[1].split("#")[0],("http://localhost:8081"));
 		
