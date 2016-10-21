@@ -115,7 +115,7 @@ public class WebTest
 				By.xpath("//ts-message[contains(@id,'"+(index+1)+"')]/div/span[@class='message_body']/span[@class='mention']"));
 		
 		
-		assertEquals(getIDHelloResponseContent.getText(), "deploy");
+		assertEquals(getIDHelloResponseContent.getText(), "Your app has been deployed at http://amazonaws.com/mock-url");
 		
 		wait.withTimeout(10, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
 		
@@ -189,7 +189,7 @@ public class WebTest
 		wait.withTimeout(10, TimeUnit.SECONDS).ignoring(StaleElementReferenceException.class);
 		
 		//System.out.println(getIDHelloResponseContent.getText().split("\\r?\\n")[1].split("#")[0]);
-		assertEquals(getIDHelloResponseContent.getText().split("\\r?\\n")[0], ("deploy"));
+		assertEquals(getIDHelloResponseContent.getText().split("\\r?\\n")[0], ("hello"));
 		
 		assertEquals(getIDHelloResponseContent.getText().split("\\r?\\n")[1].split("#")[0],("http://localhost:8081"));
 		
